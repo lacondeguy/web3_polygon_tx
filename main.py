@@ -15,6 +15,7 @@ receiver = ''
 RPC = 'https://polygon-rpc.com'
 privateKey = ''
 value = '0.5'  # Value to send
+symbol = 'MATIC/USDT'
 
 # Checksum
 web3 = Web3(Web3.HTTPProvider(RPC))
@@ -34,7 +35,7 @@ print('Gas limit: ', gas_limit)
 gas_price = web3.eth.gas_price
 gas_price_in_gwei = web3.from_wei(gas_price, 'gwei')
 print('Gas price: ', gas_price_in_gwei, 'Gwei')
-print('Gas price: ', round(gwei_to_usd(gas_price_in_gwei, gas_limit, 'MATIC/USDT'), 5), '$')
+print('Gas price: ', round(gwei_to_usd(gas_price_in_gwei, gas_limit, symbol), 5), '$')
 
 
 
